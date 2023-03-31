@@ -1,3 +1,5 @@
+const swaggerDocs = require('./swagger');
+swaggerDocs(app);
 // Importa Express e cria uma estância dele
 
 const express = require('express');
