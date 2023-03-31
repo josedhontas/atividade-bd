@@ -1,3 +1,5 @@
+// Importa Express e cria uma estância dele
+
 const express = require('express');
 const app = express();
 
