@@ -15,6 +15,3 @@ Para executar o projeto, siga as instruções abaixo:
 3. Instale as dependências: `npm install`
 4. Inicie o servidor: `npm start`
 
-### Contribuição
-
-Se você deseja contribuir com este projeto, siga as instruções abaixo:
