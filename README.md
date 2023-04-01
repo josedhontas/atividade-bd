@@ -13,5 +13,5 @@ Para executar o projeto, siga as instruções abaixo:
 1. Clone o repositório: `git clone https://github.com/seu-usuario/atividade-bd.git`
 2. Acesse o diretório do projeto: `cd atividade-bd`
 3. Instale as dependências: `npm install`
-4. Inicie o servidor: `npm start`
+4. Inicie o servidor: `node index.js`
 
