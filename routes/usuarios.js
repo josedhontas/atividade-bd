@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-let usuarios = [];
+const fs = require('fs');
 
 /**
  * @swagger
@@ -55,17 +55,34 @@ let usuarios = [];
  */
 router.post('/', (req, res) => {
     const { cpf, nome, data_nascimento } = req.body;
-
+  
     if (!cpf || !nome || !data_nascimento) {
-        return res.status(400).send('Informe todos os campos obrigatórios');
+      return res.status(400).send('Informe todos os campos obrigatórios');
     }
-
+  
     const usuario = { cpf, nome, data_nascimento };
-
+  
+    // Lê os usuários existentes do arquivo JSON
+    let usuarios = [];
+    try {
+      const data = fs.readFileSync('usuarios.json');
+      usuarios = JSON.parse(data);
+    } catch (error) {
+      console.error(error);
+    }
+  
+    // Adiciona o novo usuário à lista de usuários
     usuarios.push(usuario);
-
-    res.send(usuario);
-});
+  
+    // Escreve a lista atualizada de usuários para o arquivo JSON
+    fs.writeFile('usuarios.json', JSON.stringify(usuarios), (error) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).send('Erro ao adicionar usuário');
+      }
+      res.send(usuario);
+    });
+  });
 
 /**
  * @swagger
@@ -112,14 +129,24 @@ router.post('/', (req, res) => {
  */
 router.get('/:cpf', (req, res) => {
     const cpf = parseInt(req.params.cpf);
-
-    const usuario = usuarios.find(u => u.cpf === cpf);
-
-    if (!usuario) {
-        return res.status(404).send('Usuário não encontrado');
+  
+    // Lê os usuários existentes do arquivo JSON
+    let usuarios = [];
+    try {
+      const data = fs.readFileSync('usuarios.json');
+      usuarios = JSON.parse(data);
+    } catch (error) {
+      console.error(error);
     }
-
+  
+    // Busca o usuário pelo CPF na lista de usuários
+    const usuario = usuarios.find(u => u.cpf === cpf);
+  
+    if (!usuario) {
+      return res.status(404).send('Usuário não encontrado');
+    }
+  
     res.send(usuario);
-});
+  });
 
 module.exports = router;
