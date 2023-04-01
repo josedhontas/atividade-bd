@@ -1,9 +1,10 @@
-const swaggerDocs = require('./swagger');
-swaggerDocs(app);
 // Importa Express e cria uma estância dele
 
 const express = require('express');
 const app = express();
+
+const swaggerDocs = require('./swagger');
+swaggerDocs(app);
 
 // Array para armazenar os usuários (simulando um banco de dados)
 let usuarios = [];
