@@ -10,11 +10,9 @@ const options = {
       description: 'API para criação e busca de usuários',
     },
   },
-  apis: ['./index.js'],
+  apis: ['./routes/*.js'],
 };
 
 const specs = swaggerJsdoc(options);
 
-module.exports = (app) => {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-};
+module.exports = swaggerUi.serveFiles(specs);
