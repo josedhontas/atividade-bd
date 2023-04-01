@@ -4,7 +4,7 @@ Este é um projeto para a disciplina de Banco de Dados, desenvolvido por José D
 
 ### Documentação da API
 
-A documentação da API pode ser encontrada em: [http://18.190.132.70:8000/api-docs/](http://18.190.132.70:8000/api-docs/)
+A documentação da API pode ser encontrada em: [http://18.190.132.70:8000/api-docs/](http://18.190.132.70:8000/api-docs/){:target="_blank"}
 
 ### Como executar o projeto
 
