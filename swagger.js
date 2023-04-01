@@ -15,4 +15,4 @@ const options = {
 
 const specs = swaggerJsdoc(options);
 
-module.exports = swaggerUi.serveFiles(specs);
+module.exports = swaggerUi.setup(specs);
