@@ -8,7 +8,7 @@ A documentação da API pode ser encontrada em: [http://18.190.132.70:8000/api-d
 
 ### Vídeo explicativo
 
-O video encontra-se em: [Trabalho Prático de Banco de Dados](https://youtu.be/j68igBFf3Bw)
+O video encontra-se em: [Trabalho Prático de Banco de Dados](https://youtu.be/7T-413zNM7Q)
 
 ### Como executar o projeto
 
